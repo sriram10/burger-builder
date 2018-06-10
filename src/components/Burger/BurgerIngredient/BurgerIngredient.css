@@ -111,3 +111,31 @@
     background: linear-gradient(#bf3813, #c45e38);
     margin: 2% auto;
 }
+
+.Meat, 
+.Salad, 
+.Cheese, 
+.Bacon {
+    box-shadow: 0 1px 2px #ccc;
+    transition: all .35s ease-in-out;
+}
+
+.Meat:hover, 
+.Salad:hover, 
+.Cheese:hover, 
+.Bacon:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 2px 2px #999;
+}
+
+.Meat:hover:after, 
+.Salad:hover:after, 
+.Cheese:hover:after, 
+.Bacon:hover:after {
+    content: 'click to remove';
+    font-weight: 400;
+    font-size: 10px;
+    position: absolute;
+    right: 0;
+}
