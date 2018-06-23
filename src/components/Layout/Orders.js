@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Order = (props) => {
   return (
-    <Link to={'/orders/'+props.title.replace(/ /g, '-')} style={{textDecoration:'none',margin:'5px', padding:'10px', backgroundColor:'#f1f1f1', display:'inline-block'}}>
+    <Link to={//'/orders/'+props.title.replace(/ /g, '-')}
+      {
+      pathname: '/orders/'+props.title.replace(/ /g, '-'),
+      search: '?id='+props.id
+    }} style={{textDecoration:'none',margin:'5px', padding:'10px', backgroundColor:'#f1f1f1', display:'inline-block'}}>
       <h3>{props.title}</h3>
       <p>{props.desc}</p>
       <h3>{props.price}</h3>
@@ -20,9 +24,11 @@ const products = [
 ]
 
 const Orders = (props) => {
+  console.log(props);
+  let title = 'Orders';
   return (
     <div>
-      <h1>Orders</h1>
+      <h1>{title + ' - ' + props.title}</h1>
       <div>
         {
           products.map(prod => <Order key={prod.id} {...prod} />)
